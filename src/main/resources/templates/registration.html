@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Password Management Tool</a>
+</nav>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+<!--         error message-->
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${duplicateError}">
+                <strong th:text="${duplicateError}"></strong>
+            </div>
+
+            <div class="card border-0 shadow rounded-3 my-5">
+                <div class="card-body p-4 p-sm-5">
+                    <h2 class="card-title text-center mb-5 fw-light fs-5">Sign Up</h2>
+
+                    <form th:action="@{/registration}" method="POST" th:object="${user}">
+                        <div class="form-float   ting mb-3">
+                            <label for="floatingInput" style="margin-top:3px">Account Name</label>
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    id="floatingInput"
+                                    th:field="*{userName}"
+                                    th:classappend="${#fields.hasErrors('userName')?'is-invalid':''}"
+                                    placeholder="Enter User Name"/>
+                            <div th:each="error: ${#fields.errors('userName')}" th:text="${error}"
+                                 class="invalid-feedback">
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <label for="floatingPassword" style="margin-top:3px">Password</label>
+                            <input
+                                    type="password"
+                                    class="form-control"
+                                    id="floatingPassword"
+                                    th:field="*{password}"
+                                    th:classappend="${#fields.hasErrors('password')?'is-invalid':''}"
+                                    placeholder="Password"
+                            />
+                            <div th:each="error: ${#fields.errors('password')}" th:text="${error}"
+                                 class="invalid-feedback">
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
+                                Up
+                            </button>
+                        </div>
+                        <br/>
+                        <div class="row" style="float:right">
+                            <p>Don't have an account? <a th:href="@{/login}">Login Here</a></p>
+                        </div>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!--required autofocus="autofocus"-->

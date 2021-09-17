@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>PMT</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #138496;">
+    <div class="container-fluid">
+        <a class="navbar-brand" th:href="@{/accounts}">Password Management Tool</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" th:href="@{/accounts}">Account List</a>
+                <a class="nav-link active" aria-current="page" th:href="@{/addGroup}">Create Group</a>
+                <a class="nav-link active" aria-current="page" th:href="@{/showGroup}">Show Group</a>
+
+            </div>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" style=" margin-left: 650px;">
+            <ul class="nav navbar-nav">
+                <li sec:authorize="isAuthenticated()"><a style="color:white;" th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br/>
+<div class="container">
+    <div style="color:black;margin-top:25px;margin-left:40px;font-size: 20px">
+        Welcome <span sec:authentication="principal.username">User</span>
+    </div>
+</div>
+</body>
+</html>
