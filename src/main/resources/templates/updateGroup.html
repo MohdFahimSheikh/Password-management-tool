@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -29,7 +28,7 @@
                 <div class="card-body p-4 p-sm-5">
                     <h2 class="card-title text-center mb-2 fw-light fs-5">Add Group</h2>
 
-                    <form th:action="@{/addGroup}" method="POST" th:object="${group}">
+                    <form th:action="@{/update/{id}(id=${group.groupId})}" method="POST" th:object="${group}">
                         <div class="form-float   ting mb-3">
                             <label for="floatingInput" style="margin-top:3px">Group Name</label>
                             <input

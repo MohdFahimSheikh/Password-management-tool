@@ -54,10 +54,17 @@
         <tbody>
         <tr th:each="group: ${groups}">
             <td th:text="${group.groupName}"></td>
+
             <td>
                 <a th:href="@{/groups/{id}(id=${group.groupId})}">
-                    <button type="button" class="btn btn-primary"style="margin-left: 350px;">Check Accounts</button>
+                    <button type="button" class="btn btn-primary"style="margin-left: 350px; background-color: #138496;">Check Accounts</button>
                 </a>
+                <a th:href="@{/update/{id}(id=${group.groupId})}">
+                    <i class="fas fa-edit" style="font-size:20px;margin-left:15px;color: #138496;"></i></a>
+
+                <a th:href="@{/deleteGroup/{id}(id=${group.groupId})}">
+                    <i class="fas fa-trash" style="font-size:20px; margin-left: 5px;color: #138496;"></i></a>
+
             </td>
         </tr>
         </tbody>

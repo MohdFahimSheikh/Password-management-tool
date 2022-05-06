@@ -74,6 +74,11 @@
 	</dependency>
 
 	<dependency>
+		<groupId>org.modelmapper</groupId>
+		<artifactId>modelmapper</artifactId>
+		<version>2.4.5</version>
+	</dependency>
+	<dependency>
         <groupId>org.hibernate.validator</groupId>
         <artifactId>hibernate-validator</artifactId>
         <version>6.2.0.Final</version>
@@ -81,6 +86,7 @@
 	<dependency>
 		<groupId>org.junit.jupiter</groupId>
 		<artifactId>junit-jupiter-api</artifactId>
+		<version>5.7.2</version>
 		<scope>test</scope>
 	</dependency>
 	<dependency>
@@ -107,6 +113,20 @@
 		<version>3.11.2</version>
 		<scope>test</scope>
 	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+	<dependency>
+		<groupId>org.hamcrest</groupId>
+		<artifactId>hamcrest-core</artifactId>
+		<scope>test</scope>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-library -->
+	<dependency>
+		<groupId>org.hamcrest</groupId>
+		<artifactId>hamcrest-library</artifactId>
+		<scope>test</scope>
+	</dependency>
+
 	<dependency>
 		<groupId>org.mockito</groupId>
 		<artifactId>mockito-inline</artifactId>

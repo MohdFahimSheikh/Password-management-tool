@@ -16,24 +16,6 @@
 
 </head>
 <body>
-<!--<nav class="navbar navbar-expand-md bg-dark navbar-dark">-->
-<!--    &lt;!&ndash; Brand &ndash;&gt;-->
-<!--    <a class="navbar-brand" href="#">Password Management Tool</a>-->
-
-<!--    &lt;!&ndash; Toggler/collapsibe Button &ndash;&gt;-->
-<!--    &lt;!&ndash;    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">&ndash;&gt;-->
-<!--    &lt;!&ndash;        <span class="navbar-toggler-icon"></span>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </button>&ndash;&gt;-->
-
-<!--     Navbar links -->
-<!--        <div class="collapse navbar-collapse" id="collapsibleNavbar">-->
-<!--            <ul class="navbar-nav">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/accounts}">Password Management</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--</nav>-->
 
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #138496;">
     <div class="container-fluid">
@@ -64,7 +46,7 @@
 
     <!-- error message-->
     <div th:if="${param.duplicate}">
-        <div class="alert alert-danger">account is duplicate.</div>
+        <div class="alert alert-danger">Account is duplicate.</div>
     </div>
     <div>
         <h1 style="text-align: center"> List Accounts </h1>
